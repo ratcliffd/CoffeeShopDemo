@@ -1,0 +1,14 @@
+.header {
+  display: flex;
+  background-color: #fffff0;
+  font-weight: bold;
+  padding-left: 5%;
+}
+
+.header li {
+  float: left;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  padding-top: 1rem;
+  list-style: none;
+}

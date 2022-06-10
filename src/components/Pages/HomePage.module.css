@@ -1,0 +1,28 @@
+.HomePage {
+   display: block;
+    float: clear;
+
+}
+
+.HomePage h1{
+    color:rgb(183, 178, 171);
+    padding-left: 5%;
+    font-weight: bold;
+}
+
+.coffeeImage {
+    width: 50rem;
+    height: 30rem;
+    border: 3px solid #ccc;
+    background: antiquewhite;
+    margin: auto;
+    padding: 15px 10px;
+    border-radius: 12px;
+}
+
+.coffeeImage img {
+    width: 100%;
+    height: 100%;
+   
+    
+}
