@@ -1,11 +1,11 @@
 #ignore all
-*
+
 
 #unignore
 
 !.gitignore
 
-!src/*
+!src/!
 !public/
 !node_modules/
 
