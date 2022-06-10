@@ -5,7 +5,7 @@
 
 !.gitignore
 
-!src/
+!src/*
 !public/
 !node_modules/
 
