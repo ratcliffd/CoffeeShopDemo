@@ -1,0 +1,18 @@
+#ignore all
+*
+
+#unignore
+
+!.gitignore
+
+!src/
+!public/
+
+!*.js
+!*.css
+!*.html
+
+!*.jpg
+!*.gif
+!*.png
+!*.ico
