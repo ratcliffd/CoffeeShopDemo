@@ -7,10 +7,14 @@
 
 !src/
 !public/
+!node_modules/
+
 
 !*.js
 !*.css
 !*.html
+!*.json
+
 
 !*.jpg
 !*.gif
