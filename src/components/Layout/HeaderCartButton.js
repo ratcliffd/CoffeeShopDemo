@@ -6,7 +6,7 @@ const HeaderCartButton = (props) => {
     return( 
 
         <button className={classes.button}>
-            <span>Items In Cart: </span>
+            <span>Cart: </span>
             
         </button>
 
