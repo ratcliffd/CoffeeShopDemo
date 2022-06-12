@@ -1,15 +1,22 @@
 import React from "react";
 
+import classes from "./DrinkItems.module.css";
+
 const DrinkItems = (props) => {
 
+    
+
     return(
-       <li>
-            <div>
+        
+       <li className={classes.eachListItem}>
+            <div className={classes.drinkBox}>
                 <h3>{props.name}</h3>
-                <div>{props.description}</div>
-                <div>{props.price}</div>                
+                <p>{props.description}</p>
+                <h5>{props.price}</h5> 
+                <button className={classes.button}>Add Item To Cart</button>              
             </div>
        </li>
+    
     );
 }
 

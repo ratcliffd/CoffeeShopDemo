@@ -2,6 +2,7 @@ import React from "react";
 import MenuPage from "../Pages/MenuPage";
 import DrinkItems from "./DrinkItems";
 import Card from "../UI/Card";
+import classes from './AvaliableDrinks.module.css';
 
 
 
@@ -48,7 +49,7 @@ const AvaliableDrinks = (props) =>{
     return(
         <section>
             <Card>
-                <ul>{drinkList}</ul>
+                <ul className={classes.avalDrink}>{drinkList}</ul>
             </Card>
         </section>
     );
