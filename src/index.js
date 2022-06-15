@@ -6,18 +6,21 @@ import OrderPage from "./components/Pages/OrderPage";
 import MenuPage from "./components/Pages/MenuPage";
 import LocationPage from "./components/Pages/LocationPage"
 import './index.css';
+import CartProvider from "./store/CartProvider";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root")
 );
 root.render(
+  <CartProvider>
   <BrowserRouter>   
     <Routes>
       <Route path="/" element={<App />} />
-      <Route path="/pages/orderPage" element={<OrderPage />} />
-      <Route path="/pages/menuPage" element={<MenuPage />} />
-      <Route path="/pages/locationPage" element={<LocationPage />} />
+      <Route path='/menuPage' element={<MenuPage/>}/>
+      <Route path='/orderPage' element={<OrderPage/>}/>
+      <Route path='/locationPage' element={<LocationPage/>}/>
     </Routes>
   </BrowserRouter>
+  </CartProvider>
  
 );

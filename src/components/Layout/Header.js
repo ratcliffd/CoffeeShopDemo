@@ -1,25 +1,39 @@
-import React from "react";
+import React, {useState} from "react";
 import { Link, Outlet, BrowserRouter, Routes, Route } from "react-router-dom";
 
 import LocationPage from "../Pages/LocationPage";
 import HomePage from "../Pages/HomePage";
 import OrderPage from "../Pages/OrderPage";
 import MenuPage from "../Pages/MenuPage";
-
+import Cart from "../Cart/Cart";
 import classes from "./Header.module.css";
 import HeaderCartButton from "./HeaderCartButton";
 
 const Header = (props) => {
+
+
+  const [closeCartModal, setCloseCartModal] = useState(false);
+
+
+  const cartClickHandler = () =>{
+    setCloseCartModal(true);
+  }
+  
+  const closeCartClickHandler = () =>{
+    setCloseCartModal(false);
+  }
+
   return (
-    <div className={classes.header}>
+
+  
+    <div className={classes.header}> 
+     { closeCartModal && <Cart onClick={closeCartClickHandler}/>}
       <nav>
         <ul>
           <Link to="/">
             <li>Home</li>
           </Link>
-          <Link to="orderPage">
-            <li>Order</li>
-          </Link>
+
           <Link to="menuPage">
             <li>Menu</li>
           </Link>
@@ -29,7 +43,8 @@ const Header = (props) => {
         </ul>
       </nav>
 
-      <HeaderCartButton />
+      <HeaderCartButton onClick={cartClickHandler}/>
+      
 
       <Routes>
         <Route path="orderPage" element={<OrderPage />} />

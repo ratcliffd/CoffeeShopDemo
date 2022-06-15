@@ -7,15 +7,15 @@ const HomePage = (props) => {
 
     return(
         <React.Fragment>
-        <Header/>
-        <body className={classes.HomePage}>
+        <Header />
+        <div className={classes.HomePage}>
         <span>
         <h1>Welcome to Derek's Coffee Shop</h1>
         </span>
         <div className={classes.coffeeImage}>
             <img src={coffeeImage} alt="a simple cup of coffee"/>
         </div>
-        </body>
+        </div>
         </React.Fragment>
     );
 }
