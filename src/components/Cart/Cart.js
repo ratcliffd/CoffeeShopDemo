@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import CartModal from "../UI/CartModal";
 import CartItem from "./CartItem";
 import CartContext from "../../store/cart-context";
+import classes from './Cart.module.css';
 
 const Cart = (props) => {
   const cartCtx = useContext(CartContext);
@@ -36,12 +37,12 @@ const Cart = (props) => {
     <CartModal onClick={props.onClick}>
       {cartItems}
       <div>
-        <span>Total Amount: </span>
-        <span>{totalAmount}</span>
+        <span className={classes.total}>Total Amount: </span>
+        <span className={classes.totalAmount}>{totalAmount}</span>
       </div>
       <div>
-        <button onClick={props.onClick}>close</button>
-        {hasItems && <button>order</button>}
+        <button onClick={props.onClick} className={classes.button}>close</button>
+        {hasItems && <button className={classes.button}>order</button>}
       </div>
     </CartModal>
   );
