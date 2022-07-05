@@ -1,5 +1,4 @@
 import React from "react";
-
 import DrinkItems from "./DrinkItems";
 import Card from "../UI/Card";
 import classes from "./AvaliableDrinks.module.css";

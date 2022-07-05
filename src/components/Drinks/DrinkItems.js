@@ -1,5 +1,4 @@
-import React, { useContext, useState, useRef } from "react";
-import CartContext from "../../store/cart-context";
+
 import classes from "./DrinkItems.module.css";
 import { useDispatch } from "react-redux";
 import { cartActions } from "../../store/cart-slice";
