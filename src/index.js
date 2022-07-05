@@ -6,13 +6,15 @@ import OrderPage from "./components/Pages/OrderPage";
 import MenuPage from "./components/Pages/MenuPage";
 import LocationPage from "./components/Pages/LocationPage"
 import './index.css';
-import CartProvider from "./store/CartProvider";
+
+import { Provider } from 'react-redux';
+import store from "./store";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root")
 );
 root.render(
-  <CartProvider>
+  <Provider store={store}>
   <BrowserRouter>   
     <Routes>
       <Route path="/" element={<App />} />
@@ -21,6 +23,6 @@ root.render(
       <Route path='/locationPage' element={<LocationPage/>}/>
     </Routes>
   </BrowserRouter>
-  </CartProvider>
+  </Provider>
  
 );

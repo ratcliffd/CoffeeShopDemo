@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 import { Link, Outlet, BrowserRouter, Routes, Route } from "react-router-dom";
-
+import {useSelector} from 'react-redux';
 import LocationPage from "../Pages/LocationPage";
 import HomePage from "../Pages/HomePage";
 import OrderPage from "../Pages/OrderPage";
@@ -8,9 +8,11 @@ import MenuPage from "../Pages/MenuPage";
 import Cart from "../Cart/Cart";
 import classes from "./Header.module.css";
 import HeaderCartButton from "./HeaderCartButton";
+import { uiActions } from "../../store/ui-slice";
 
 const Header = (props) => {
 
+ const showCart = useSelector( state => state.ui.cartIsVisible);
 
   const [closeCartModal, setCloseCartModal] = useState(false);
 
@@ -27,7 +29,7 @@ const Header = (props) => {
 
   
     <div className={classes.header}> 
-     { closeCartModal && <Cart onClick={closeCartClickHandler}/>}
+     { showCart && <Cart onClick={closeCartClickHandler}/>}
       <nav>
         <ul>
           <Link to="/">
@@ -43,7 +45,7 @@ const Header = (props) => {
         </ul>
       </nav>
 
-      <HeaderCartButton onClick={cartClickHandler}/>
+      <HeaderCartButton />
       
 
       <Routes>

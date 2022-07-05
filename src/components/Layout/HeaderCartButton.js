@@ -1,22 +1,24 @@
-import React, {useContext} from "react";
-import CartContext from "../../store/cart-context";
+import React from "react";
+import { useDispatch, useSelector } from "react-redux";
 import classes from "./HeaderCartButton.module.css";
+import { uiActions } from "../../store/ui-slice";
 
 const HeaderCartButton = (props) => {
+  const dispatch = useDispatch();
 
-  const ctx = useContext(CartContext);
+  const toggleCartHandler = () => {
+    dispatch(uiActions.toggle());
+  };
 
-  const { items } = ctx;
+  const cartQuantity = useSelector(state => state.cart.totalQuantity)
 
-  const numberOfCartItems = items.reduce((curNumber, item) => {
-    return curNumber + item.amount;
-  }, 0);
-
-  
+  // const numberOfCartItems = items.reduce((curNumber, item) => {
+  //   return curNumber + item.amount;
+  // }, 0);
 
   return (
-    <button className={classes.button} onClick={props.onClick}>
-      <span>Cart: {numberOfCartItems} </span>
+    <button className={classes.button} onClick={toggleCartHandler}>
+      <span>Cart: {cartQuantity} </span>
     </button>
   );
 };
