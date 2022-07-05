@@ -3,7 +3,7 @@ import Header from "../Layout/Header";
 import classes from './HomePage.module.css';
 import coffeeImage from '../../assets/coffeebackground.jpg';
 
-const HomePage = (props) => {
+const HomePage = () => {
 
     return(
         <React.Fragment>

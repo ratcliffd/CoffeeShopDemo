@@ -1,13 +1,15 @@
 import React from "react";
-import { Outlet } from "react-router-dom";
+import { Route, Routes } from "react-router";
 import HomePage from "./components/Pages/HomePage";
-
+import MenuPage from "./components/Pages/MenuPage";
 
 function App() {
   return (
     <React.Fragment>
-      <HomePage />
-      <Outlet />
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="menuPage" element={<MenuPage />} />
+      </Routes>
     </React.Fragment>
   );
 }
