@@ -6,30 +6,6 @@ import { cartActions } from "../../store/cart-slice";
 
 const DrinkItems = (props) => {
   const dispatch = useDispatch();
-  const ctx = useContext(CartContext);
-  const amountInputRef = useRef();
-
-  const [amountIsValid, setAmountIsValid] = useState(true);
-
-  const submitHandler = (event) => {
-    event.preventDefault();
-
-    const enteredAmount = amountInputRef.current.value;
-    const enteredAmountNumber = +enteredAmount;
-
-    if (
-      enteredAmount.trim().length === 0 ||
-      enteredAmountNumber < 1 ||
-      enteredAmountNumber > 5
-    ) {
-      setAmountIsValid(false);
-      return;
-    }
-
-    addToCartHandler(enteredAmountNumber);
-  };
-
-
 
   const price = `$${props.price.toFixed(2)}`;
 
@@ -41,13 +17,6 @@ const DrinkItems = (props) => {
         price: props.price,
       })
     );
-
-    // ctx.addItem({
-    //   id: props.id,
-    //   name: props.name,
-    //   amount: amount,
-    //   price: props.price,
-    // });
   };
   return (
     <li className={classes.eachListItem}>

@@ -10,11 +10,7 @@ const HeaderCartButton = (props) => {
     dispatch(uiActions.toggle());
   };
 
-  const cartQuantity = useSelector(state => state.cart.totalQuantity)
-
-  // const numberOfCartItems = items.reduce((curNumber, item) => {
-  //   return curNumber + item.amount;
-  // }, 0);
+  const cartQuantity = useSelector((state) => state.cart.totalQuantity);
 
   return (
     <button className={classes.button} onClick={toggleCartHandler}>

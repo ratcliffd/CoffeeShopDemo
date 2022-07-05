@@ -1,8 +1,7 @@
-import React, { useContext } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import CartModal from "../UI/CartModal";
 import CartItem from "./CartItem";
-import CartContext from "../../store/cart-context";
+
 import classes from "./Cart.module.css";
 import { uiActions } from "../../store/ui-slice";
 
@@ -11,25 +10,11 @@ const Cart = (props) => {
 
   const cartItems = useSelector((state) => state.cart.items);
 
- 
-
   const totalAmount = useSelector((state) => state.cart.totalAmount);
 
   const toggleCartHandler = () => {
     dispatch(uiActions.toggle());
   };
-
-  // const cartCtx = useContext(CartContext);
-
-  // const hasItems = cartItems.items.length > 0;
-
-  // const cartItemRemoveHandler = (id) => {
-  //   cartCtx.removeItem(id);
-  // };
-
-  // const cartItemAddHandler = (item) => {
-  //   cartCtx.addItem({ ...item, amount: 1 });
-  // };
 
   const cartItemsArray = (
     <ul>
@@ -40,8 +25,6 @@ const Cart = (props) => {
           name={item.name}
           amount={item.quantity}
           price={item.price}
-          // onRemove={cartItemRemoveHandler.bind(null, item.id)}
-          // onAdd={cartItemAddHandler.bind(null, item)}
         />
       ))}
     </ul>
